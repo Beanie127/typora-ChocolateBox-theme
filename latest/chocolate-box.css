@@ -1,0 +1,301 @@
+/*
+
+Chocolate Box Theme
+
+A warm-toned and playful dark theme for typora inspired by luxury confectionary.
+
+Features:
+- Unified color scheme across documents and UI
+- WCAG-compliant color contrasts
+- Uses webfonts for maximum accessibility
+- Alternate blockquote style, easily produced in markdown with intuitive > > notation
+- Intelligent page break insertion in Pandoc exports
+
+Created by Alex Keen https://alexrkeen.com
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --bg-color: #171212;
+  --text-color: #e3e3de;
+  --header-color: #d6523d;
+  --subheader-color: #e7c95a;
+  --accent-color: #acd959;
+  --quote-color: #2E2424;
+  --md-char-color: #9EDFFF;
+  --meta-content-color: #9EDFFF;
+  --primary-color: #6F1A07;
+  --primary-btn-border-color: var(--header-color);
+  --primary-btn-text-color: #333;
+  --window-border: 1px solid #16161a;
+  --active-file-bg-color: var(--accent-color);
+  --active-file-text-color: var(--bg-color);
+  --active-file-border-color: #4F3D0720;
+  --active-search-item-bg-color: var(--quote-color);
+  --side-bar-bg-color: var(--quote-color);
+  --item-hover-bg-color: var(--subheader-color);
+  --item-hover-text-color: var(--bg-color);
+  --search-select-text-color: #333;
+  --search-select-bg-color: #9e1c1c70;
+  --select-text-bg-color:  #2e242450;
+  --rawblock-edit-panel-bd: #d0d0d0;
+  --node-fill: #fbfbfb;
+  --node-border: #0000001a;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: "Fira Sans", Arial, sans-serif;
+  line-height: 1.8em;
+}
+
+#write {
+  max-width: 50em;
+}
+
+pre.md-meta-block, sup.md-footnote {
+ background: var(--quote-color);
+ color: var(--subheader-color);
+}
+
+::selection {
+  background: var(--quote-color);
+  text-shadow: 1px 1px var(--accent-color);
+}
+
+/* headers and subheaders */
+
+h1 {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  margin: 0.5em 0em 0.3em;
+  border: 5px solid var(--header-color);
+  color: var(--header-color);
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--subheader-color);
+  font-weight: 700;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 400;
+  color: var(--subheader-color);
+}
+
+/* paragraph */
+
+p, table {
+  font-weight: 200;
+}
+
+p strong {
+font-weight: 700;
+}
+
+/* highlight */
+
+mark {
+  font-weight: bolder;
+}
+
+/* blockquote */
+
+blockquote {
+  border-left: 3px solid var(--header-color);
+  page-break-inside: avoid;
+}
+
+blockquote p {
+  padding-left: 1rem;
+}
+
+blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+
+/* Alternate Blockquote — select in markdown with double quote indicator > > */
+
+blockquote blockquote {
+  text-align: center;
+  color: var(--accent-color);
+  width: 100%;
+  padding-left: 0em !important;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-left: hidden;
+  border-right: 3px solid var(--header-color);
+  background: var(--quote-color);
+  margin: 1em 0em !important;
+}
+
+/* code */
+
+code {
+  font-size: .9em;
+  border: 1px solid var(--accent-color);
+  border-radius: .25rem;
+  padding: 0 .125rem;
+}
+
+/* hyperlink */
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal divider */
+
+hr {
+  height: 100px;
+  width: 100%;
+  background: url("./ChocolateBox/hr.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0;
+  filter: invert(43%) sepia(72%) saturate(836%) hue-rotate(327deg) brightness(85%) contrast(96%);
+  padding: 0;
+  margin: 0;
+}
+
+/* Tables */
+
+table thead {
+  border-bottom: 2px solid var(--header-color);
+}
+
+table tr {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+th, td {
+  padding: 5px;
+}
+
+/*Bullets and checklists */
+
+#write ul {
+  list-style-type: disc;
+  color: var(--accent-color);
+  line-height: 1.5em;
+}
+
+#write ul li ul {
+  list-style-type: circle;
+}
+
+#write ol {
+  list-style-type: decimal;
+  color: var(--accent-color);
+  line-height: 1.5em;
+}
+
+#write ol > li, #write ul > li {
+  color: var(--accent-color);
+}
+
+#write ol > li > *, #write ul > li > * {
+  color: var(--text-color);
+}
+
+#write .md-task-list-item > input {
+  -webkit-appearance: initial;
+  display: block;
+  position: absolute;
+  border: 1px solid #b4b4b4;
+  border-radius: .25rem;
+  margin-top: .1rem;
+  margin-left: -1.8rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: background 0.3s;
+}
+
+#write .md-task-list-item > input[checked]::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 60%;
+  width: 2px;
+  transform: rotate(40deg);
+  background: #333;
+}
+
+#write .md-task-list-item > input[checked]::after {
+  content: '';
+  position: absolute;
+  top: 46%;
+  left: 25%;
+  height: 30%;
+  width: 2px;
+  transform: rotate(-40deg);
+  background: #333;
+}
+
+#write .md-task-list-item.task-list-done > p {
+  opacity: .5;
+  text-decoration: line-through;
+}
+
+/* Pandoc Export settings */
+
+hr+h1 {
+  page-break-before: always;
+}
+
+table {
+  padding: 10px;
+  page-break-inside: avoid;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+/*
+
+    Name:       Bespin
+    Author:     Mozilla / Jan T. Sott
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-inner.CodeMirror {background: #28211c; color: #9d9b97;}
+.cm-s-inner div.CodeMirror-selected {background: #36312e !important;}
+.cm-s-inner .CodeMirror-gutters {background: #28211c; border-right: 0px;}
+.cm-s-inner .CodeMirror-linenumber {color: #666666;}
+.cm-s-inner .CodeMirror-cursor {border-left: 1px solid #797977 !important;}
+
+.cm-s-inner span.cm-comment {color: #937121;}
+.cm-s-inner span.cm-atom {color: #9b859d;}
+.cm-s-inner span.cm-number {color: #9b859d;}
+
+.cm-s-inner span.cm-property, .cm-s-inner span.cm-attribute {color: #54be0d;}
+.cm-s-inner span.cm-keyword {color: #cf6a4c;}
+.cm-s-inner span.cm-string {color: #f9ee98;}
+
+.cm-s-inner span.cm-variable {color: #54be0d;}
+.cm-s-inner span.cm-variable-2 {color: #5ea6ea;}
+.cm-s-inner span.cm-def {color: #cf7d34;}
+.cm-s-inner span.cm-error {background: #cf6a4c; color: #797977;}
+.cm-s-inner span.cm-bracket {color: #9d9b97;}
+.cm-s-inner span.cm-tag {color: #cf6a4c;}
+.cm-s-inner span.cm-link {color: #9b859d;}
+
+.cm-s-inner .CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
+.cm-s-inner .CodeMirror-activeline-background { background: #404040; }
