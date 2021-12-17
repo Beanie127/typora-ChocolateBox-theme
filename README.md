@@ -1,13 +1,22 @@
+> designed and tested on Windows 10 and Linux elementaryOS. Not tested on macOS, but should work.
+> Updated 2021-12-17
+
 # Chocolate Box
 
-Chocolate Box is a warm-toned and playful dark theme for typora inspired by luxury confectionary.
+Chocolate box is a warm-toned and playful dark theme for typora inspired by luxury confectionary.
+
+## Screenshot:
+
+![chocolate-box-demo1](/latest/chocolatebox/chocolate-box-demo1.jpg)
 
 ## Features:
 
 - Unified color scheme across documents and UI
 - WCAG-compliant color contrasts
 - Uses webfonts for maximum accessibility
--   Alternate blockquote style, easily produced in markdown with intuitive > > notation
+
+- Alternate blockquote style, easily produced in markdown with intuitive > > notation
+
 - Intelligent page break insertion in Pandoc exports
 
 ## Installation Notes:
