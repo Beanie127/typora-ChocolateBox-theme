@@ -1,2 +1,17 @@
-# typora-ChocolateBox-theme
-Chocolate Box theme for Typora
+# Chocolate Box
+
+Chocolate Box is a warm-toned and playful dark theme for typora inspired by luxury confectionary.
+
+## Features:
+
+- Unified color scheme across documents and UI
+- WCAG-compliant color contrasts
+- Uses webfonts for maximum accessibility
+-   Alternate blockquote style, easily produced in markdown with intuitive > > notation
+- Intelligent page break insertion in Pandoc exports
+
+## Installation Notes:
+
+This theme imports Fira Sans from Google’s servers. For faster loading and offline use, all relevant font files are included in the folder for this theme, but they’re not imported individually from the local files I’m a lazy pos.
+
+Created by Alex Keen https://alexrkeen.com
